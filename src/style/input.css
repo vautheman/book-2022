@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    @apply font-work-sans;
+}
+
+::-webkit-scrollbar{
+    @apply w-1
+}
+
+::-webkit-scrollbar-thumb{
+    @apply bg-green-fluo rounded-sm
+}
+
+body{
+    @apply dark:bg-blue-dark bg-white container mx-auto cursor-none;
+}
+
+.active{
+    @apply relative text-black
+}
+
+.active::before{
+    /* @apply bg-green-fluo rounded-full w-14 h-14 flex text-black; */
+    content: "";
+    @apply block absolute w-14 h-14 bg-green-fluo top-1/2 left-1/2 translate-x-middle translate-y-middle rounded-full transition-all -z-10
+}
+
+
+
+.card-3D {
+    transform-style: preserve-3d;
+    transform: perspective(1000px) scale3d(1, 1, 1);
+    @apply rounded-2xl bg-cover bg-center transition-size duration-100 relative visible will-change-transform rotate-0;
+}
+
+.title-3D-card {
+    transform: translateZ(60px);
+}
